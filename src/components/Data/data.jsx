@@ -39,7 +39,7 @@ function FitTrack() {
   // Function to send data to Google Sheets using the Google Apps Script URL
   const sendToGoogleSheets = async (name, date, weight, duration) => {
     const formData = new FormData();
-    formData.append('name', name); // Append the name
+    formData.append('name', name);  // Append the name
     formData.append('date', date);
     formData.append('weight', weight);
     formData.append('duration', duration);
