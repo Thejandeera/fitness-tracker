@@ -1,0 +1,203 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', sans-serif;
+    transition: all 0.3s ease;
+  }
+  
+  body {
+    background: #fff; /* White background */
+    color: #333; /* Black text color */
+    font-size: 16px;
+  }
+  
+  /* FitTrack Container */
+  .fittrack-container {
+    width: 100%;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff; /* White background */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .fittrack-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #f44336; /* Red color */
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    animation: slideIn 1s ease-out;
+  }
+  
+  /* Input Section */
+  .fittrack-input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .fittrack-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 2px solid #333; /* Black border */
+    border-radius: 8px;
+    background-color: #f1f1f1; /* Light gray background */
+    color: #333; /* Black text color */
+    transition: all 0.3s ease;
+  }
+  
+  .fittrack-input:focus {
+    border-color: #f44336; /* Red border on focus */
+    outline: none;
+  }
+  
+  .fittrack-button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background: linear-gradient(45deg, #f44336, #d32f2f);
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .fittrack-button:hover {
+    background: linear-gradient(45deg, #d32f2f, #f44336);
+    transform: translateY(-5px);
+  }
+  
+  .fittrack-button:focus {
+    outline: none;
+  }
+  
+  /* FitTrack Grid */
+  .fittrack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .fittrack-card {
+    background: #fff; /* White background */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .fittrack-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .fittrack-card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #f44336; /* Red color */
+    margin-bottom: 10px;
+  }
+  
+  .fittrack-card-description {
+    font-size: 1rem;
+    color: #333; /* Black text color */
+    margin-bottom: 20px;
+  }
+  
+  /* Achievements Section */
+  .fittrack-achievements {
+    background: #fff; /* White background */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .fittrack-achievements-list {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1rem;
+    color: #333; /* Black text color */
+  }
+  
+  .fittrack-achievements-list li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 25px;
+  }
+  
+  .fittrack-achievements-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #f44336; /* Red color */
+    font-size: 1.2rem;
+  }
+  
+  /* Chart Styling */
+  .fittrack-chart {
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+    background: #f9f9f9; /* Light background for the charts */
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .fittrack-input-section {
+      gap: 10px;
+    }
+  
+    .fittrack-input {
+      width: 100%;
+    }
+  
+    .fittrack-button {
+      width: 100%;
+    }
+  
+    .fittrack-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
