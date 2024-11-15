@@ -7,71 +7,103 @@
     background-color: #ff4d4d; /* Main red color for FitTrack */
     color: white;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    position: sticky;
+    position: fixed; /* Fixed navbar */
     top: 0;
+    left: 0; /* Ensure it spans the full width */
+    right: 0;
     z-index: 10;
-  }
-  
-  /* Logo Style */
-  .navbar-logo {
+    width: 100%; /* Ensure the navbar stretches across the screen */
+}
+
+/* Add padding to body or first content section to prevent overlap */
+body {
+    padding-top: 60px; /* Adjust this value based on the height of your navbar */
+}
+
+/* Logo Style */
+.navbar-logo {
     display: flex;
-    align-items: center; /* Vertically center text and image */
+    align-items: center;
     font-size: 24px;
     font-weight: bold;
     color: white;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
     padding-left: 20px;
-  }
-  
-  /* Logo SVG Style */
-  .navbar-logo-svg {
-    width: 30px; /* Adjust size */
+}
+
+/* Logo SVG Style */
+.navbar-logo-svg {
+    width: 30px;
     height: auto;
-    margin-left: 15px; /* Add spacing between logo text and SVG */
-  }
-  
-  /* Navigation Links */
-  .nav-links {
+    margin-left: 15px;
+}
+
+/* Navigation Links */
+.nav-links {
     display: flex;
     list-style: none;
     gap: 20px;
-  }
-  
-  .nav-links li {
+}
+
+/* Navigation Links Styling */
+.nav-links li {
     position: relative;
-  }
-  
-  .nav-links a {
+}
+
+.nav-links a {
     color: white;
     font-size: 18px;
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 8px;
     transition: background-color 0.3s, color 0.3s;
-  }
-  
-  /* Hover Effect */
-  .nav-links a:hover {
-    background-color: white;
-    color: #ff4d4d;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Active Link Effect */
-  .nav-links a:active {
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    color: #000000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Active Link Effect */
+.nav-links a:active {
     transform: scale(0.95);
-  }
-  
-  /* Mobile Responsiveness */
-  @media (max-width: 768px) {
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
     .navbar {
-      flex-direction: column;
-      text-align: center;
+        padding-top: 0px;
+        margin-top: 0px;
+        position: relative;
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
     }
-  
+
+    /* Hide nav links by default in mobile view */
     .nav-links {
-      flex-direction: column;
-      gap: 15px;
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
     }
-  }
-  
+
+    /* Add a toggle button for mobile navigation */
+    .navbar-toggler {
+        display: block;
+        background-color: #ff4d4d;
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-left: auto;
+    }
+
+    /* When navbar is expanded, display the links */
+    .navbar.open .nav-links {
+        display: flex;
+    }
+}
