@@ -1,0 +1,77 @@
+/* Navigation Bar Container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ff4d4d; /* Main red color for FitTrack */
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  /* Logo Style */
+  .navbar-logo {
+    display: flex;
+    align-items: center; /* Vertically center text and image */
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    padding-left: 20px;
+  }
+  
+  /* Logo SVG Style */
+  .navbar-logo-svg {
+    width: 30px; /* Adjust size */
+    height: auto;
+    margin-left: 15px; /* Add spacing between logo text and SVG */
+  }
+  
+  /* Navigation Links */
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+  
+  .nav-links li {
+    position: relative;
+  }
+  
+  .nav-links a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Hover Effect */
+  .nav-links a:hover {
+    background-color: white;
+    color: #ff4d4d;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Active Link Effect */
+  .nav-links a:active {
+    transform: scale(0.95);
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+  
