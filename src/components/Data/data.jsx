@@ -63,7 +63,7 @@ function FitTrack() {
 
   return (
     <div className="fittrack-container">
-      <h1 className="fittrack-title">Welcome to FitTrack</h1>
+      <h1 className="fittrack-title">Welcome to Fitness Island</h1>
       
       {/* User Input Section */}
       <div className="fittrack-input-section">

@@ -4,7 +4,7 @@ import './navibar.css';
 function NavigationBar() {
   return (
     <nav className="navbar">
-      <h1 className="navbar-logo">FitTrack <img src="/svg3.svg" alt="Logo" className="navbar-logo-svg" /></h1>
+      <h1 className="navbar-logo">Fitness Island <img src="/svg3.svg" alt="Logo" className="navbar-logo-svg" /></h1>
       <ul className="nav-links">
         <li><a href="/home">Home</a></li>
         <li><a href="/about">About</a></li>

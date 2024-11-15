@@ -26,7 +26,7 @@ const HomePage = () => {
       {/* Features Section */}
       <div className="features-section">
         <div className="features-content">
-          <h2>Why Choose FitTrack?</h2>
+          <h2>Why Choose Fitness Island?</h2>
           <div className="features-grid">
             <FeatureCard 
               icon={<Activity className="feature-icon" />}
@@ -56,7 +56,7 @@ const HomePage = () => {
       <div className="cta-section">
         <div className="cta-content">
           <h2>Ready to Start Your Fitness Journey?</h2>
-          <p>Join thousands of users who have transformed their lives with FitTrack</p>
+          <p>Join thousands of users who have transformed their lives with Fitness Island</p>
           <button className="primary-button">Sign Up Now</button>
         </div>
       </div>
@@ -66,7 +66,7 @@ const HomePage = () => {
         <div className="footer-content">
           <div className="footer-grid">
             <div className="footer-column">
-              <h3>FitTrack</h3>
+              <h3>Fitness Island</h3>
               <p>Your personal fitness companion</p>
             </div>
             <div className="footer-column">
