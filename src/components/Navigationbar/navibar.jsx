@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 import './navibar.css';
 
 function NavigationBar() {
@@ -6,11 +7,11 @@ function NavigationBar() {
     <nav className="navbar">
       <h1 className="navbar-logo">Fitness Island <img src="/svg3.svg" alt="Logo" className="navbar-logo-svg" /></h1>
       <ul className="nav-links">
-        <li><a href="/home">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/features">Features</a></li>
-        <li><a href="/progress">Progress</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><Link to="/home">Home</Link></li> {/* Replace href with Link */}
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/features">Features</Link></li>
+        <li><Link to="/progress">Progress</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
       </ul>
     </nav>
   );
