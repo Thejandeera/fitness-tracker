@@ -6,6 +6,8 @@ import Home from './components/Home/home.jsx';
 import About from './components/About/about.jsx';
 import Contact from './components/Contact/contact.jsx';
 import Features from './components/Features/features.jsx';
+import Signup from './components/Signup/signup.jsx';
+import Login from './components/Login/login.jsx';
 
 const App = () => {
   return (
@@ -16,7 +18,9 @@ const App = () => {
         </section>
         <section id="Data">
           <Routes> {/* Define routes inside Routes component */}
-            <Route path="/" element={<Home />} />  {/* Default route */}
+            <Route path="/login" element={<Login />} /> 
+            <Route path="/" element={<Signup />} /> 
+            <Route path="/signup" element={<Signup />} /> 
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/features" element={<Features />} />
