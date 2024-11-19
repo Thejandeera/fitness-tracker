@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import './data.css';
-
+import { Toaster, toast } from 'react-hot-toast';
 function FitTrack() {
   // State to store weight and workout data
   const [weightData, setWeightData] = useState([]);
@@ -15,26 +15,32 @@ function FitTrack() {
 
   // Handler for adding new data to the chart and sending it to Google Sheets
   const handleAddData = () => {
+    // Directly call toast.success without a separate function
+    toast.success('Graph Generated ..!!', {
+      duration: 2000,  // Set duration to 2000ms (2 seconds)
+    });
+  
     // Update weight data
     setWeightData(prevData => [
       ...prevData,
       { date, weight: parseFloat(weight) }
     ]);
-
+  
     // Update workout duration data
     setWorkoutData(prevData => [
       ...prevData,
       { date, duration: parseFloat(duration) }
     ]);
-
+  
     // Send data to Google Sheets using POST request
     sendToGoogleSheets(name, date, weight, duration);
-
+  
     // Clear input fields after adding data, except the name field
     setDate('');
     setWeight('');
     setDuration('');
   };
+  
 
   // Function to send data to Google Sheets using the Google Apps Script URL
   const sendToGoogleSheets = async (name, date, weight, duration) => {
@@ -102,6 +108,7 @@ function FitTrack() {
         <button onClick={handleAddData} className="fittrack-button">
           Generate Graph
         </button>
+        <Toaster position="top-center" reverseOrder={false} />
       </div>
 
       <div className="fittrack-grid">

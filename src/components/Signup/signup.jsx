@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';  // Import useNavigate for navigation
 import styles from './signup.module.css'; // Import the CSS module
+import { Toaster, toast } from 'react-hot-toast';
 
 const Signup = () => {
   const [fullName, setFullName] = useState('');
@@ -8,6 +9,9 @@ const Signup = () => {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const navigate = useNavigate();  // Initialize navigate function
+  const notify = () => toast.success('Signup successful!', {
+    duration: 2000,  // Set duration to 3000ms (3 seconds)
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,7 +33,7 @@ const Signup = () => {
       });
 
       if (response.ok) {
-        alert('Account created successfully!');
+        // alert('Account created successfully!');
         // Redirect to login page after successful signup
         navigate('/login');
       } else {
@@ -74,12 +78,13 @@ const Signup = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <button type="submit">Sign Up</button>
+          <button type="submit" onClick={notify} >Sign Up</button>
           <p>
             Already have an account? <a href="/login">Login</a>
           </p>
         </form>
       </div>
+      <Toaster position="top-center" reverseOrder={false} />
     </div>
   );
 };

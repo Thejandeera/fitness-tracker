@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';  // Import useNavigate for navigation
 import styles from './login.module.css'; // Import the CSS module
-
+import { Toaster, toast } from 'react-hot-toast';
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();  // Initialize navigate function
+
+  const notify = () => toast.success('Login successful!', {
+    duration: 2000,  // Set duration to 3000ms (3 seconds)
+  });
+  
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,8 +45,9 @@ const Login = () => {
 
     } catch (error) {
       console.error('Error:', error);
-      alert('Login successful !..');
-      navigate('/home');
+      setTimeout(() => {
+        navigate('/home');
+      }, 2000); 
     }
   };
 
@@ -63,12 +70,13 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit">Login</button>
+          <button type="submit" onClick={notify} >Login</button>
           <p>
             Don't have an account? <a href="/signup">Sign Up</a>
           </p>
         </form>
       </div>
+      <Toaster position="top-center" reverseOrder={false} />
     </div>
   );
 };
