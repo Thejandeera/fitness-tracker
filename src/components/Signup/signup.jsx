@@ -35,7 +35,7 @@ const Signup = () => {
       if (response.ok) {
         // alert('Account created successfully!');
         // Redirect to login page after successful signup
-        navigate('/login');
+        navigate('/home');
       } else {
         alert('Error: Could not create account.');
       }
