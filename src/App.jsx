@@ -9,6 +9,7 @@ import Features from './components/Features/features.jsx';
 import Signup from './components/Signup/signup.jsx';
 import Login from './components/Login/login.jsx';
 
+
 const App = () => {
   return (
     <BrowserRouter> {/* Wrap everything with BrowserRouter for routing */}
